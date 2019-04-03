@@ -118,7 +118,7 @@ class COCO:
         :return:
         """
         for key, value in list(self.datset['info'].items()):
-            print('%s: %s' % (key, value))
+            print('[pycoco eval] %s: %s' % (key, value))
 
     def getAnnIds(self, imgIds=[], catIds=[], areaRng=[], iscrowd=None):
         """
@@ -262,7 +262,7 @@ class COCO:
             ax.add_collection(p)
         if self.dataset['type'] == 'captions':
             for ann in anns:
-                print(ann['caption'])
+                print('[pycocotools]' + ann['caption'])
 
     def loadRes(self, resFile):
         """
