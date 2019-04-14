@@ -33,8 +33,8 @@ class PTBTokenizer:
         #        'edu.stanford.nlp.process.PTBTokenizer',
         #        '-preserveLines', '-lowerCase']
         cmd = ['/data/leuven/329/vsc32913/jdk-11.0.2/bin/java -cp '
-               '/data/leuven/329/vsc32913/ga-img-captioning/cider/pyciderevalcap/tokenizer/stanford-corenlp-3.4.1.jar '
-               '/data/leuven/329/vsc32913/ga-img-captioning/cider/pyciderevalcap/tokenizer/'
+               '/data/leuven/329/vsc32913/ga-img-captioning/cococaption/pycocoevalcap/tokenizer/'
+               'stanford-corenlp-3.4.1.jar '
                'edu.stanford.nlp.process.PTBTokenizer -preserveLines -lowerCase ']
 
         # ======================================================
