@@ -55,12 +55,14 @@ class PTBTokenizer:
         # ======================================================
         # tokenize sentence
         # ======================================================
-        cmd.append(os.path.basename(tmp_file.name))
+        cmd.append(os.path.join(path_to_jar_dirname, os.path.basename(tmp_file.name)))
+        print(path_to_jar_dirname)
+        print(os.path.basename(tmp_file.name))
         print(cmd)
-        # p_tokenizer = subprocess.Popen(cmd, cwd=path_to_jar_dirname,
-        #                                stdout=subprocess.PIPE, shell=True)
-        p_tokenizer = subprocess.Popen(cmd,
+        p_tokenizer = subprocess.Popen(cmd, cwd=path_to_jar_dirname,
                                        stdout=subprocess.PIPE, shell=True)
+        # p_tokenizer = subprocess.Popen(cmd,
+        #                                stdout=subprocess.PIPE, shell=True)
         token_lines = p_tokenizer.communicate(input=sentences.rstrip())[0]
         lines = token_lines.decode("utf-8").split('\n')
         # remove temp file
