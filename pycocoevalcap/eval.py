@@ -5,8 +5,8 @@ from __future__ import print_function
 __author__ = 'tylin'
 from .tokenizer.ptbtokenizer import PTBTokenizer
 from .bleu.bleu import Bleu
-from .meteor.meteor import Meteor
-from .rouge.rouge import Rouge
+# from .meteor.meteor import Meteor
+# from .rouge.rouge import Rouge
 from .cider.cider import Cider
 # from .spice.spice import Spice
 # from .wmd.wmd import WMD
@@ -46,8 +46,8 @@ class COCOEvalCap:
         print('[pycoco eval] setting up scorers...')
         scorers = [
             (Bleu(4), ["Bleu_1", "Bleu_2", "Bleu_3", "Bleu_4"]),
-            (Meteor(), "METEOR"),
-            (Rouge(), "ROUGE_L"),
+            # (Meteor(), "METEOR"),
+            # (Rouge(), "ROUGE_L"),
             (Cider(), "CIDEr"),
             # (self.Spice, "SPICE"),
             # (WMD(),   "WMD"),
