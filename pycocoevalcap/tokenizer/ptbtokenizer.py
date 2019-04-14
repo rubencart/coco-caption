@@ -66,7 +66,7 @@ class PTBTokenizer:
         token_lines = p_tokenizer.communicate(input=sentences.rstrip())[0]
         lines = token_lines.decode("utf-8").split('\n')
         # remove temp file
-        os.remove(tmp_file.name)
+        # os.remove(tmp_file.name)
 
         # ======================================================
         # create dictionary for tokenized captions
@@ -74,7 +74,7 @@ class PTBTokenizer:
         for k, line in zip(image_id, lines):
             if not k in final_tokenized_captions_for_image:
                 final_tokenized_captions_for_image[k] = []
-            tokenized_caption = ' '.join([w for w in line.rstrip().split(' ') \
+            tokenized_caption = ' '.join([w for w in line.rstrip().split(' ')
                                           if w not in PUNCTUATIONS])
             final_tokenized_captions_for_image[k].append(tokenized_caption)
 
