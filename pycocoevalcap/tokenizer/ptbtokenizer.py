@@ -55,20 +55,16 @@ class PTBTokenizer:
         # ======================================================
         # tokenize sentence
         # ======================================================
-        cmd.append(os.path.join(path_to_jar_dirname, os.path.basename(tmp_file.name)))
-        print(path_to_jar_dirname)
-        print(os.path.basename(tmp_file.name))
-        print(cmd)
+        # cmd.append(os.path.join(path_to_jar_dirname, os.path.basename(tmp_file.name)))
+        cmd[0] += os.path.join(path_to_jar_dirname, os.path.basename(tmp_file.name))
         p_tokenizer = subprocess.Popen(cmd, cwd=path_to_jar_dirname,
                                        stdout=subprocess.PIPE, shell=True)
         # p_tokenizer = subprocess.Popen(cmd,
         #                                stdout=subprocess.PIPE, shell=True)
         token_lines = p_tokenizer.communicate(input=sentences.rstrip())[0]
-        print(len(token_lines))
         lines = token_lines.decode("utf-8").split('\n')
-        print(len(lines))
         # remove temp file
-        # os.remove(tmp_file.name)
+        os.remove(tmp_file.name)
 
         # ======================================================
         # create dictionary for tokenized captions
