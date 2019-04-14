@@ -64,7 +64,9 @@ class PTBTokenizer:
         # p_tokenizer = subprocess.Popen(cmd,
         #                                stdout=subprocess.PIPE, shell=True)
         token_lines = p_tokenizer.communicate(input=sentences.rstrip())[0]
+        print(len(token_lines))
         lines = token_lines.decode("utf-8").split('\n')
+        print(len(lines))
         # remove temp file
         # os.remove(tmp_file.name)
 
