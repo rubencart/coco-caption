@@ -259,8 +259,9 @@ class BleuScorer(object):
                 bleus[k] *= math.exp(1 - 1/ratio)
 
         if verbose > 0:
-            print(totalcomps)
-            print("ratio:", ratio)
+            # print(totalcomps)
+            # print("ratio:", ratio)
+            pass
 
         self._score = bleus
         return self._score, bleu_list
